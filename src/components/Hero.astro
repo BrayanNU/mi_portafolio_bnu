@@ -1,26 +1,40 @@
 <section class="hero">
-  <h1>Brayan Nieto Ugarte</h1>
+  <h1 class="fade-up delay-1">Brayan Nieto Ugarte</h1>
 
-  <h2>
+  <h2 class="fade-up delay-1">
     Egresado de Ingeniería de Sistemas e Informática
   </h2>
 
-  <p>
+  <p class="fade-up delay-2">
     Desarrollador Web Junior enfocado en Frontend,
     con bases en Backend y consumo de APIs REST.
   </p>
 
   <div class="hero-buttons">
-    <a href="#projects" class="btn-primary">
+    <a href="#projects" class="btn-primary fade-up delay-2">
       Ver proyectos
     </a>
 
     <a
       href="/cv/Brayan_Nieto_CV.pdf"
       download
-      class="btn-secondary"
+      class="btn-secondary fade-up delay-2"
     >
       Descargar CV
     </a>
   </div>
 </section>
+<script>
+  const elements = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-up");
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+
+  elements.forEach(el => observer.observe(el));
+</script>

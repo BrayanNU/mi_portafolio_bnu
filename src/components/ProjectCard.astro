@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  tech: string[];
+  link: string;
+}
+
+const { title, description, tech, link } = Astro.props as Props;
+---
+
+<article class="card reveal">
+  <h3>{title}</h3>
+  <p>{description}</p>
+
+  <ul class="tech-list">
+    {tech.map((t: string) => (
+      <li>{t}</li>
+    ))}
+  </ul>
+
+  <a href={link} target="_blank" class="btn">
+    Ver proyecto →
+  </a>
+</article>
