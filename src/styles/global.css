@@ -1,6 +1,9 @@
 :root {
-  --bg-color: #f8f9fa;
-  --text-color: #212529;
+  --bg-color1: #33415c;
+  --bg-color2: #001233;
+  --bg-color3: #ffffff;
+  --text-color: #ffffff;
+  --text-color2: #001233;
   --border-color: #ced4da;
   --accent-color: #adb5bd;
 
@@ -32,10 +35,9 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  border-bottom: 1px solid var(--border-color);
   z-index: 2;
   position: absolute;
-  background-color: #dee2e6;
+  background-color: #001233;
   right: 0;
   border-radius: 25PX;
   margin-top: 10PX;
@@ -55,12 +57,14 @@ body {
   margin: 0;
   padding: 12px;
 }
-
+.nav-links a .svg_donw{
+  stroke: var(--text-color2);
+}
 .nav-links a,
 .theme-toggle {
-  background: #f8f9fa;
+  background: var(--bg-color3);
   border: none;
-  color: var(--text-color);
+  color: var(--text-color2);
   cursor: pointer;
   text-decoration: none;
   font-size: 0.95rem;
@@ -75,9 +79,9 @@ body {
 
   gap: 4px;                      /* espacio entre SVG y texto */
 
-  background: #dee2e6;
-  border: 1px solid #888b8d;
-  color: var(--text-color);
+  background: var(--bg-color3);
+  border: none;
+  color: var(--text-color2);
   cursor: pointer;
   text-decoration: none;
 
@@ -94,7 +98,7 @@ body {
   max-width: 1350px;
   min-height: 90.722vh;
   margin: 0;
-  background-color: #adb5bd;
+  background-color: #001233;
   clip-path: polygon(0 0, 100% 0, 51% 100%, 0% 100%);
 }
 
@@ -120,11 +124,12 @@ body {
 }
 
 .btn-primary {
-  background-color: var(--text-color);
-  color: var(--bg-color);
+  background-color: var(--bg-color3);
+  color: var(--text-color2);
   padding: 0.7rem 1.4rem;
   border-radius: 6px;
   text-decoration: none;
+  border: 1px solid var(--text-color2);
 }
 
 .btn-secondary {
@@ -135,15 +140,27 @@ body {
   text-decoration: none;
 }
 
-.about,
-.focus {
+.about{
   padding: 4rem 2rem;
   max-width: 900px;
   margin: auto;
   min-height: 100vh;
-  background-color: #6c757d;
+  background-color: var(--bg-color);
+  color: #000;
+}
+.focus {
+  padding: 3rem 30rem 3rem 30rem;
+  width: auto;
+  margin: auto;
+  min-height: 100vh;
+  background-color: var(--bg-color2);
+  color: var(--text-color);
 }
 
+.about .ind{
+  margin-top: 9rem;
+  color: var(--text-color2);
+}
 .about h2,
 .focus h2 {
   font-size: 2rem;
@@ -170,7 +187,7 @@ body {
 
 .contact {
   padding: 4rem 2rem;
-  background: #f8f9fa;
+  background: var(--bg-color2);
   text-align: center;
 }
 
@@ -179,7 +196,7 @@ body {
 }
 
 .contact h2 {
-  color: #343a40;
+  color: var(--text-color);
 }
 
 .dark .contact h2 {
@@ -187,7 +204,7 @@ body {
 }
 
 .contact p {
-  color: #6c757d;
+  color: var(--text-color);
   margin-bottom: 2rem;
 }
 
@@ -198,27 +215,32 @@ body {
 }
 
 .contact-links a {
-  color: #343a40;
+  display: flex;          /* convierte <a> en contenedor flex */
+  align-items: center;    /* centra verticalmente texto + icono */
+  gap: 0.5rem;            /* separación entre icono y texto */
+  color: var(--text-color);
   text-decoration: none;
-  font-weight: 500;
-  border-bottom: 2px solid transparent;
+  font-size: 16px;
 }
 
-.contact-links a:hover {
-  border-color: #adb5bd;
+/* tamaño del icono */
+.icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;        /* evita que el SVG se reduzca */
 }
 
 
 .footer {
   padding: 1.5rem;
   text-align: center;
-  background: #ced4da;
-  color: #343a40;
+  background: var(--bg-color2);
+  color: var(--text-color);
   font-size: 0.9rem;
 }
 
 .dark .footer {
-  background: #343a40;
+  background: var(--bg-color2);
   color: #adb5bd;
 }
 
@@ -252,12 +274,13 @@ body {
 .card h3 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+  color: var(--text-color2);
 }
 
 .card p {
   font-size: 0.9rem;
   line-height: 1.5;
-  color: var(--accent-color);
+  color: var(--text-color2);
 }
 .card:hover {
   transform: translateY(-6px);
@@ -280,12 +303,15 @@ body {
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
   font-size: 0.8rem;
+  color: var(--text-color2);
+  list-style: none;
 }
 
 .btn {
   display: inline-block;
   margin-top: 0.5rem;
   font-weight: 500;
+  color: var(--text-color2);
 }
 
 * {
@@ -293,10 +319,23 @@ body {
 }
 
 .grid {
-  display: grid;
+  display:grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+}
+
+.grid_skills {
+  display:block;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  background-color: #001233;
+  border-radius: 22px;
+  padding: 20px;
+}
+.grid_skills p {
+  color: var(--text-color);
 }
 
 .lang-btn {
@@ -313,10 +352,34 @@ body {
   max-width: 900px;
   margin: auto;
   min-height: 100vh;
-  background-color: aqua;
+  background-color: var(--bg-color3);
+  color: var(--text-color2);
 }
 
 .projects h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
+  color: var(--text-color2);
+}
+.projects .grid_skills .icon-link{
+  stroke: var(--text-color);
+  color: var(--text-color);
+  background-color: #1e3a63;
+  padding: 5px;
+  border-radius: 8px;
+}
+.icon-link {
+  display: inline-flex;     
+  align-items: center;     
+  justify-content: center;    
+  gap: 8px;                   
+  text-decoration: none;      
+  color: inherit;    
+  margin-right: 1rem;         
+}
+
+.icon-link:hover {
+border-color: white;
+box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+color: white;
 }
