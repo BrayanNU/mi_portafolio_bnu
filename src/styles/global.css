@@ -1,7 +1,12 @@
 :root {
+  --bg-colorX: #ffffff;
   --bg-color1: #33415c;
   --bg-color2: #001233;
   --bg-color3: #ffffff;
+  --bg-color4: #ffffff;
+  --bg-color5: #F4F5F7;
+  --bg-color6: #1e3a63;
+  --bg-colorfocus:#001233;
   --text-color: #ffffff;
   --text-color2: #001233;
   --border-color: #ced4da;
@@ -13,10 +18,28 @@
 }
 
 html.dark {
-  --bg-card: #2b3035;
-  --border: #343a40;
-  --badge: #343a40;
+  /* Backgrounds */
+  --bg-colorX: #0D1117;
+  --bg-color1: #1e2a3b;   /* versión oscura del #33415c */
+  --bg-color2: #000000;   /* versión más profunda del #001233 */
+  --bg-color3: #0d1117;   /* reemplaza el blanco */
+  --bg-color4: #0D1117;
+  --bg-color5:#000000;
+  --bg-colorfocus:#0D1117;
+  /* Textos */
+  --text-color: #e9ecef;  /* texto principal claro */
+  --text-color2: #f8f9fa; /* texto sobre fondos oscuros */
+
+  /* UI */
+  --border-color: #343a40;
+  --accent-color: #adb5bd;
+
+  /* Cards / badges */
+  --bg-card: #161b22;
+  --border: #2b3035;
+  --badge: #21262d;
 }
+
 
 html {
   scroll-behavior: smooth;
@@ -25,7 +48,7 @@ html {
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  background-color: var(--bg-color);
+  background-color: var(--bg-colorX);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
 }
@@ -37,7 +60,7 @@ body {
 
   z-index: 2;
   position: absolute;
-  background-color: #001233;
+  background-color: var(--bg-color2);
   right: 0;
   border-radius: 25PX;
   margin-top: 10PX;
@@ -98,7 +121,7 @@ body {
   max-width: 1350px;
   min-height: 90.722vh;
   margin: 0;
-  background-color: #001233;
+  background-color: var(--bg-color2);
   clip-path: polygon(0 0, 100% 0, 51% 100%, 0% 100%);
 }
 
@@ -144,8 +167,8 @@ body {
   padding: 4rem 2rem;
   max-width: 100%;
   min-height: 100vh;
-  background-color: var(--bg-color);
-  color: #000;
+  background-color: var(--bg-color4);
+  color: var(--text-color2);
   position: relative; /* necesario */
   overflow: hidden;   /* recorta el clip-path */
 }
@@ -158,7 +181,7 @@ body {
   width: 100%;
   height: 100%;
 
-  background: #f4f5f7; /* color o gradiente */
+  background:var(--bg-color5); /* color o gradiente */
 
 clip-path: polygon(44.5% 0, 100% 0, 100% 60%, 100% 100%, 25% 100%, 93% 69%, 81% 20%);
 
@@ -180,7 +203,7 @@ clip-path: polygon(44.5% 0, 100% 0, 100% 60%, 100% 100%, 25% 100%, 93% 69%, 81% 
   width: auto;
   margin: auto;
   min-height: 100vh;
-  background-color: var(--bg-color2);
+  background-color: var(--bg-colorfocus);
   color: var(--text-color);
 }
 
@@ -211,7 +234,7 @@ clip-path: polygon(44.5% 0, 100% 0, 100% 60%, 100% 100%, 25% 100%, 93% 69%, 81% 
 }
 
 .focus .focus-grid_b .mf{
-  background-color: #1E3A63;
+  background-color: var(--bg-color6);
   width: 500px;
   height: 50px;
   padding: 10px;
@@ -222,7 +245,7 @@ clip-path: polygon(44.5% 0, 100% 0, 100% 60%, 100% 100%, 25% 100%, 93% 69%, 81% 
 }
 .focus .focus-grid_b .mf .mf_icon{
   padding: 8px;
-  background-color: #001233;
+  background-color: var(--bg-color2);
   border-radius: 5px;
   margin-right: 10px;
 }
@@ -239,9 +262,7 @@ clip-path: polygon(44.5% 0, 100% 0, 100% 60%, 100% 100%, 25% 100%, 93% 69%, 81% 
   text-align: center;
 }
 
-.dark .contact {
-  background: #212529;
-}
+
 
 .contact h2 {
   color: var(--text-color);
@@ -378,7 +399,7 @@ clip-path: polygon(44.5% 0, 100% 0, 100% 60%, 100% 100%, 25% 100%, 93% 69%, 81% 
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
-  background-color: #001233;
+  background-color: var(--bg-color2);
   border-radius: 22px;
   padding: 20px;
 }
@@ -412,7 +433,7 @@ clip-path: polygon(44.5% 0, 100% 0, 100% 60%, 100% 100%, 25% 100%, 93% 69%, 81% 
 .projects .grid_skills .icon-link{
   stroke: var(--text-color);
   color: var(--text-color);
-  background-color: #1e3a63;
+  background-color: var(--bg-color);
   border-radius: 5px;
 }
 .icon-link {
