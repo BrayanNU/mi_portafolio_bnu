@@ -7,6 +7,9 @@
   --bg-color5: #F4F5F7;
   --bg-color6: #1e3a63;
   --bg-colorfocus:#001233;
+  --bg-colorIcon: #001233;
+  --bg-colorProj:#ffffff;
+  --bg-colorskills:#001233;
   --text-color: #ffffff;
   --text-color2: #001233;
   --border-color: #ced4da;
@@ -25,7 +28,11 @@ html.dark {
   --bg-color3: #0d1117;   /* reemplaza el blanco */
   --bg-color4: #0D1117;
   --bg-color5:#000000;
+  --bg-color6: #000000;
   --bg-colorfocus:#0D1117;
+  --bg-colorIcon: #0D1117;
+  --bg-colorProj:#000000;
+  --bg-colorskills:#161B22;
   /* Textos */
   --text-color: #e9ecef;  /* texto principal claro */
   --text-color2: #f8f9fa; /* texto sobre fondos oscuros */
@@ -147,7 +154,7 @@ body {
 }
 
 .btn-primary {
-  background-color: var(--bg-color3);
+  background-color: var(--bg-colorX);
   color: var(--text-color2);
   padding: 0.7rem 1.4rem;
   border-radius: 6px;
@@ -181,7 +188,7 @@ body {
   width: 100%;
   height: 100%;
 
-  background:var(--bg-color5); /* color o gradiente */
+  background:var(--bg-color2); /* color o gradiente */
 
 clip-path: polygon(44.5% 0, 100% 0, 100% 60%, 100% 100%, 25% 100%, 93% 69%, 81% 20%);
 
@@ -245,7 +252,7 @@ clip-path: polygon(44.5% 0, 100% 0, 100% 60%, 100% 100%, 25% 100%, 93% 69%, 81% 
 }
 .focus .focus-grid_b .mf .mf_icon{
   padding: 8px;
-  background-color: var(--bg-color2);
+  background-color: var(--bg-colorIcon);
   border-radius: 5px;
   margin-right: 10px;
 }
@@ -338,6 +345,7 @@ clip-path: polygon(44.5% 0, 100% 0, 100% 60%, 100% 100%, 25% 100%, 93% 69%, 81% 
   border: 1px solid var(--border);
   background: var(--bg-card);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 16rem;
 }
 
 .card h3 {
@@ -350,6 +358,7 @@ clip-path: polygon(44.5% 0, 100% 0, 100% 60%, 100% 100%, 25% 100%, 93% 69%, 81% 
   font-size: 0.9rem;
   line-height: 1.5;
   color: var(--text-color2);
+
 }
 .card:hover {
   transform: translateY(-6px);
@@ -364,7 +373,11 @@ clip-path: polygon(44.5% 0, 100% 0, 100% 60%, 100% 100%, 25% 100%, 93% 69%, 81% 
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
-  margin: 1rem 0;
+  margin: 0;
+  
+}
+.card ul{
+  padding-inline-start: 00px;
 }
 
 .tech-list li {
@@ -399,7 +412,7 @@ clip-path: polygon(44.5% 0, 100% 0, 100% 60%, 100% 100%, 25% 100%, 93% 69%, 81% 
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
-  background-color: var(--bg-color2);
+  background-color: var(--bg-colorskills);
   border-radius: 22px;
   padding: 20px;
 }
@@ -417,11 +430,10 @@ clip-path: polygon(44.5% 0, 100% 0, 100% 60%, 100% 100%, 25% 100%, 93% 69%, 81% 
 }
 
 .projects {
-  padding: 4rem 2rem;
-  max-width: 900px;
-  margin: auto;
+  padding: 4rem 30rem 4rem 30rem;
+  max-width: 100%;
   min-height: 100vh;
-  background-color: var(--bg-color3);
+  background-color: var(--bg-colorProj);
   color: var(--text-color2);
 }
 
@@ -433,7 +445,7 @@ clip-path: polygon(44.5% 0, 100% 0, 100% 60%, 100% 100%, 25% 100%, 93% 69%, 81% 
 .projects .grid_skills .icon-link{
   stroke: var(--text-color);
   color: var(--text-color);
-  background-color: var(--bg-color);
+  background-color: var(--bg-color6);
   border-radius: 5px;
 }
 .icon-link {
