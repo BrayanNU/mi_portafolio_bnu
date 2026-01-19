@@ -1,28 +1,39 @@
-<section class="hero reveal ">
-  <h1 class="fade-up delay-1">Brayan Nieto Ugarte</h1>
+<section class="heero">
+  <div class="hero reveal">
+    
+      <h1 class="fade-up delay-1">Brayan Nieto Ugarte</h1>
 
-  <h2 class="fade-up delay-1">
-    Egresado de Ingeniería de Sistemas e Informática
-  </h2>
+      <h2 class="fade-up delay-1">
+        Egresado de Ingeniería de Sistemas e Informática
+      </h2>
 
-  <p class="fade-up delay-2">
-    Desarrollador Web Junior enfocado en Frontend,
-    con bases en Backend y consumo de APIs REST.
-  </p>
+      <p class="fade-up delay-2">
+        Desarrollador Web Junior enfocado en Frontend,
+        con bases en Backend y consumo de APIs REST.
+      </p>
 
-  <div class="hero-buttons">
-    <a href="#projects" class="btn-primary fade-up delay-2">
-      Ver proyectos
-    </a>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-primary fade-up delay-2">
+          Ver proyectos
+        </a>
 
-    <a
-      href="/cv/Brayan_Nieto_CV.pdf"
-      download
-      class="btn-secondary fade-up delay-2"
-    >
-      Descargar CV
-    </a>
+        <a
+          href="/cv/Brayan_Nieto_CV.pdf"
+          download
+          class="btn-secondary fade-up delay-2"
+        >
+          Descargar CV
+        </a>
   </div>
+  </div>
+    <div class="hero-image">
+    <div class="bid">
+      <!-- ⚠️ Agregamos el id para que JS lo reconozca -->
+      <img id="hero-img" src="../../src/assets/bnuimg4.png" alt="image_bnu" />
+    </div>
+  </div>
+
+  
 </section>
 <script>
   const elements = document.querySelectorAll(".reveal");
@@ -37,4 +48,24 @@
   });
 
   elements.forEach(el => observer.observe(el));
+
+const heroImg = document.getElementById('hero-img') as HTMLImageElement;
+
+const darkObserver = new MutationObserver(mutations => {
+  mutations.forEach(mutation => {
+    if (mutation.attributeName === 'class') {
+      if (document.documentElement.classList.contains('dark')) {
+        heroImg.src = '../../src/assets/bnuimg3.png';
+      } else {
+        heroImg.src = '../../src/assets/bnuimg4.png';
+      }
+    }
+  });
+});
+
+darkObserver.observe(document.documentElement, { attributes: true });
+
+  
 </script>
+
+
